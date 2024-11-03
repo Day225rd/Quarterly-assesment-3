@@ -48,6 +48,18 @@ class QuizBowlApp:
         self.btn1 = ttk.Button(root, text = "Press to start!")
         self.btn1.place (x=180,y=240)
 
+    def selection(self):
+        cur = self.conn.cur()
+        cur.execute('''SELECT DISTINCT course FROM question''')
+        courses = [row[0] for row in cur.fetchall()]
+        return courses
+    def start(self):
+        
+
+class QuizBowlquestionWindow:
+    def __init__(self,master):
+
+
 qBapp = QuizBowlApp(root)
 root.mainloop()
 
