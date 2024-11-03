@@ -5,7 +5,7 @@ cur = con.cursor()
 #DATABASE TABLES WITH THEIR RESPECTIVE ROWS
 
 cur.execute('''
-                CREATE TABLE IF NOT EXISTS Course 
+                CREATE TABLE IF NOT EXISTS Math 
                 (id INTEGER PRIMARY KEY AUTOINCREMENT
                ,
                course TEXT
@@ -30,7 +30,7 @@ quizbowl_questions = [
 ]
 
 cur.executemany('''
-               INSERT INTO Course (course, question, answer)
+               INSERT INTO Math (course, question, answer)
                VALUES (?, ?, ?)
                ''', quizbowl_questions)
 con.commit()

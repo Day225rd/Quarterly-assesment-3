@@ -75,24 +75,19 @@ class new_window:
         self.label1.place(x = 30, y = 40)
 
         self.label1 = ttk.Label(self.newwindow,text = "Enter text here:")
-        self.label1.place(x = 30, y = 60)
+        self.label1.place(x = 30, y = 80)
 
         self.txtfield1 = ttk.Entry(self.newwindow)
-        self.txtfield1.place(x = 30, y = 80)
+        self.txtfield1.place(x = 130, y = 80)
 
         self.btn1 = ttk.Button(self.newwindow, text = "Submit Answer")
         self.btn1.place(x = 30, y = 100)
 
-     
 
-
-    def retreivequestion(self):
-        root.geometry("450x450")
-        cur = self.conn.cursor()
-        question = self.mathquestion.get()
-        fetch = cur.execute('''SELECT * FROM Course WHERE course = ?''', (question))
-        self.label1 = tk.Label(self.newwindow, text = fetch)
-        self.label1.place(x = 30, y = 20)
+        cur.execute('''SELECT DISTINCT question FROM Math''')
+        questionmath = cur.fetchone()
+        self.label1 = tk.Label(self.newwindow, text = questionmath)
+        self.label1.place(x = 30, y = 60)
 
 qBapp = QuizBowlApp(root)
 root.mainloop()
