@@ -1,5 +1,5 @@
 import sqlite3
-connection = sqlite3.connect('newDB.db')
+connection = sqlite3.connect('quizbowlDB.db')
 cursor = connection.cursor()
 
 #DATABASE TABLES WITH THEIR RESPECTIVE ROWS

@@ -7,22 +7,25 @@ from tkinter import ttk
 import sqlite3
 
 
-
 #database connecction
-con = sqlite3.connect('newDB.db')
+con = sqlite3.connect('quizBowldb.db')
 cur = con.cursor()
-
-root =tk.Tk()
-root.title("ULTIMATE QUIZBOWL")
 #class for buttons and text box
 #class contains the interactive elements
+root =tk.Tk()
+root.title("ULTIMATE QUIZBOWL")
+
 class QuizBowlApp:
     def __init__(self,master):
-        root.geometry('600x600')
+        root.geometry("400x400")
+
+        self.label1 = ttk.Label(master,text = "Welcome")
+        self.label1.place(x = 170, y = 40)
 
         self.label = ttk.Label(master,text = "Welcome to the quizbowl game!")
-        self.label.place(x=50, y=500)
+        self.label.place(x=100,y=50)
 
 
 
 root.mainloop()
+
