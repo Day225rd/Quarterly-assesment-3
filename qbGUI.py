@@ -19,28 +19,34 @@ root.title("ULTIMATE QUIZBOWL")
 
 class QuizBowlApp:
     def __init__(self,master):
-        root.geometry("400x400")
+        root.geometry("450x450")
 
         self.label = ttk.Label(master,text = "Welcome to the quizbowl game!")
         self.label.place(x=100,y=50)
 
+        self.label = ttk.Label(master, text = "Please select a topic, then press start when you are ready.")
+        self.label.place(x=100,y=120)
+
         
         #radio button for courses
         click = StringVar(root)
-        self.radiobutton = ttk.Radiobutton(root, text = "Rainbow six" ,variable = click, value = "Rainbow six")
+        self.radiobutton = ttk.Radiobutton(root, text = "Math" ,variable = click, value = "Rainbow six")
         self.radiobutton.place(x=180,y=220)
 
-        self.radiobutton = ttk.Radiobutton(root, text ="Terraria" ,variable = click, value = "Terraria")
+        self.radiobutton = ttk.Radiobutton(root, text ="English" ,variable = click, value = "Terraria")
         self.radiobutton.place(x=180,y=200)
 
-        self.radiobutton = ttk.Radiobutton(root, text ="OW2" ,variable = click, value = "OW2")
+        self.radiobutton = ttk.Radiobutton(root, text ="IT" ,variable = click, value = "OW2")
         self.radiobutton.place(x=180,y=180)
 
-        self.radiobutton = ttk.Radiobutton(root, text = "Darksouls 3" ,variable = click, value = "Darksouls 3")
+        self.radiobutton = ttk.Radiobutton(root, text = "Geology" ,variable = click, value = "Darksouls 3")
         self.radiobutton.place(x=180,y=160)            
 
-        self.radiobutton = ttk.Radiobutton(root, text = "Elden Ring", variable = click, value = "Elden Ring")
+        self.radiobutton = ttk.Radiobutton(root, text = "Random", variable = click, value = "Elden Ring")
         self.radiobutton.place(x=180,y=140)  
+
+        self.btn1 = ttk.Button(root, text = "Press to start!")
+        self.btn1.place (x=180,y=240)
 
 qBapp = QuizBowlApp(root)
 root.mainloop()
