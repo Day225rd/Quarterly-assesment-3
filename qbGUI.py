@@ -53,11 +53,12 @@ class QuizBowlApp:
         cur.execute('''SELECT DISTINCT course FROM question''')
         courses = [row[0] for row in cur.fetchall()]
         return courses
-    def start(self):
+    
+    # def start(self):
         
 
-class QuizBowlquestionWindow:
-    def __init__(self,master):
+# class QuizBowlquestionWindow:
+#     def __init__(self,master):
 
 
 qBapp = QuizBowlApp(root)
