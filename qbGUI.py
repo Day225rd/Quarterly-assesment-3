@@ -129,7 +129,7 @@ class New_window:
         self.newwindow.destroy()
         
 
-
+ 
 
 qBapp = QuizBowlApp(root)
 root.mainloop()
