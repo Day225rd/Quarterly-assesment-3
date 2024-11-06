@@ -18,8 +18,9 @@ cur = con.cursor()
 #class contains the interactive elements
 
 root =tk.Tk()
-root.tk.call('source', 'forest-dark.tcl')
-ttk.Style().theme_use('forest-dark')
+style = ttk.Style(root)
+style.theme_use('classic') 
+root.configure(bg="lightblue")
 root.title("ULTIMATE QUIZBOWL")
 
 
@@ -56,7 +57,7 @@ class QuizBowlApp:
         self.radiobutton.place(x=180,y=140)  
 
         self.btn1 = ttk.Button(root, text = "Press to start!", command = self.new_window)
-        self.btn1.place (x=180,y=240)
+        self.btn1.place (x=150,y=240)
 
     
         
@@ -67,6 +68,8 @@ class QuizBowlApp:
 class New_window:
     def __init__(self,master,course):
         root.geometry("450x450")
+
+        root.configure(bg="lightblue")
 
         self.current_question = 0
         self.score = 0
@@ -83,7 +86,7 @@ class New_window:
         self.label1.place(x = 30, y = 80)
 
         self.answerentry = ttk.Entry(self.newwindow)
-        self.answerentry.place(x = 130, y = 150)
+        self.answerentry.place(x = 150, y = 110)
 
         self.btn1 = ttk.Button(self.newwindow, text = "Submit Answer", command = self.check_answer)
         self.btn1.place(x = 30, y = 100)
