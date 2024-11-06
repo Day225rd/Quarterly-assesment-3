@@ -18,13 +18,15 @@ cur = con.cursor()
 #class contains the interactive elements
 
 root =tk.Tk()
+root.tk.call('source', 'forest-dark.tcl')
+ttk.Style().theme_use('forest-dark')
 root.title("ULTIMATE QUIZBOWL")
 
 
 class QuizBowlApp:
     def __init__(self,master):
         root.geometry("450x450")
-
+    
         self.m = master
 
 
