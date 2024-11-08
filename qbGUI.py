@@ -94,11 +94,6 @@ class New_window:
         self.btn2_next = ttk.Button(self.newwindow, text = "Next question", command = self.next_question)
         self.btn2_next.place(x = 30, y = 130, )
 
-        # cur.execute('''SELECT DISTINCT question FROM Math''')
-        # self.questionmath = cur.fetchone()
-        # self.label1 = tk.Label(self.newwindow, text = questionmath)
-        # self.label1.place(x = 30, y = 60)
-
         self.questions = self.load_questions()
         self.load_question()
 
