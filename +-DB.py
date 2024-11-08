@@ -14,6 +14,7 @@ cursor.execute('''
                feedback TEXT)
                ''')
 
+
 #ADDING ROWS
 cursor.execute('''
                INSERT INTO <table> (course1,course2....)
