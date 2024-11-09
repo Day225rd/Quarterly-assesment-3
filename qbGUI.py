@@ -41,19 +41,19 @@ class QuizBowlApp:
         
         #radio button for courses
         self.click = StringVar(root)
-        self.radiobutton = ttk.Radiobutton(root, text = "Math" ,variable = self.click, value = "math")
+        self.radiobutton = ttk.Radiobutton(root, text = "Programming Logic" ,variable = self.click, value = "ProgrammingLogic")
         self.radiobutton.place(x=180,y=220)
 
-        self.radiobutton = ttk.Radiobutton(root, text ="English" ,variable = self.click, value = "English")
+        self.radiobutton = ttk.Radiobutton(root, text ="Database Management" ,variable = self.click, value = "DatabaseM")
         self.radiobutton.place(x=180,y=200)
 
-        self.radiobutton = ttk.Radiobutton(root, text ="IT" ,variable = self.click, value = "IT")
+        self.radiobutton = ttk.Radiobutton(root, text ="Busn Applications" ,variable = self.click, value = "BusnApplications")
         self.radiobutton.place(x=180,y=180)
 
-        self.radiobutton = ttk.Radiobutton(root, text = "Science" ,variable = self.click, value = "Science")
+        self.radiobutton = ttk.Radiobutton(root, text = "Information Systems" ,variable = self.click, value = "Informationsystems")
         self.radiobutton.place(x=180,y=160)            
 
-        self.radiobutton = ttk.Radiobutton(root, text = "History", variable = self.click, value = "History")
+        self.radiobutton = ttk.Radiobutton(root, text = "Data Analytics", variable = self.click, value = "DataAnlytics")
         self.radiobutton.place(x=180,y=140)  
 
         self.btn1 = ttk.Button(root, text = "Press to start!", command = self.new_window)
