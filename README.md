@@ -80,3 +80,37 @@ Solution: Ensure that the database (quizBowlDB2.db) contains valid data (questio
 Issue: Incorrect or missing database connection.
 
 Solution: Make sure that the SQLite database file is located in the same directory as the Python script, or provide the correct file path to the sqlite3.connect() function
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Quiz Bowl Database Management
+This project involves managing a database for storing and manipulating quiz bowl questions. The SQLite database is used to store quiz questions, answers, and the associated course names. The Python script allows for operations such as creating tables, inserting data, and retrieving data from the database.
+
+Table of Contents
+Installation
+Usage
+Database Structure
+Functions
+License
+Installation
+To use this script, you need Python installed on your system along with the sqlite3 module, which is part of Python’s standard library.
+
+Clone or download the project files.
+Ensure you have Python 3.x installed.
+The script uses SQLite, so there's no need for an external database server.
+Usage
+Create Tables
+The script can create a database table for storing quiz bowl questions. The table DatabaseM stores:
+
+id: A unique identifier for each record.
+course: The subject or course the question belongs to.
+question: The quiz question.
+answer: The correct answer for the question.
+Insert Data
+Questions can be inserted into the database by populating the quizbowl_questions list with tuples containing the course, question, and answer. Uncomment the executemany() command to insert data into the database.
+
+View Data
+You can retrieve and print data from a table. This is done by executing a SELECT query to fetch all the data and print it to the console. Modify the table name in the execute() method if you need to fetch from a different table.
+
+Delete Data or Tables
+To delete all data from a table, use the DELETE FROM <tablename> query. If you need to completely remove a table from the database, use the DROP TABLE command. Be cautious when using these commands, as they cannot be undone.
