@@ -3,6 +3,7 @@ con = sqlite3.connect('quizbowlDB2.db')
 cur = con.cursor()
 
 #UN COMMENT TO MAKE CHANGES
+#CTRL + / to mass delete #
 #// Represents the areas bwtween different functions
         
 #list to add questions (course, question, answer)
@@ -52,4 +53,4 @@ cur = con.cursor()
 # cur.execute('''DELETE FROM <tablename> ''')
 
 #commits changes to database
-con.commit()
+# con.commit()
