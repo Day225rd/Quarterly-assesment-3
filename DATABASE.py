@@ -1,132 +1,49 @@
 import sqlite3
-connection = sqlite3.connect('newDB.db')
-cursor = connection.cursor()
+con = sqlite3.connect('quizbowlDB2.db')
+cur = con.cursor()
+
+
+print("Please select an option. 1: adds a course, question and answer to the quizbowl game,",
+          "2: lets you see all of the data within the database")
+userinput0 = input()
+if userinput0 == "1":
+        userinputDB = input("Enter the course you would like to add.")
+
+        userinputDB2 = input("Enter the question you would like to add.")
+
+        userinputDB3 = input("Enter the answer you would like to add.")
+        print("Added to the quiz")
+if userinput0 == "2":
+        cur.execute('''SELECT * FROM math''')
+        printdata = cur.fetchall()
+        print(printdata)
+        
+
+quizbowl_questions = [
+userinputDB, userinputDB2, userinputDB3
+]
 
 #DATABASE TABLES WITH THEIR RESPECTIVE ROWS
 
-cursor.execute('''
-               CREATE TABLE IF NOT EXISTS Course1
-               
-               (
-               questions1 TEXT PRIMARY KEY
-               , 
-               questions2 TEXT
+cur.execute('''
+                CREATE TABLE IF NOT EXISTS <tablename> 
+                (id INTEGER PRIMARY KEY AUTOINCREMENT
                ,
-               questions3 TEXT
+               course TEXT
                ,
-               questions4 TEXT
+               question TEXT
                ,
-               questions5 TEXT
-               ,
-               questions6 TEXT
-               , 
-               questions7 TEXT
-               ,
-               questions8 TEXT
-               ,
-               questions9 TEXT
-               ,
-               questions10 TEXT
-                              )
-               ''')
-cursor.execute('''
-               CREATE TABLE IF NOT EXISTS Course2
-               
-               (
-               questions1 TEXT PRIMARY KEY
-               , 
-               questions2 TEXT
-               ,
-               questions3 TEXT
-               ,
-               questions4 TEXT
-               ,
-               questions5 TEXT
-               ,
-               questions6 TEXT
-               , 
-               questions7 TEXT
-               ,
-               questions8 TEXT
-               ,
-               questions9 TEXT
-               ,
-               questions10 TEXT
-                              )
-               ''')
-cursor.execute('''
-               CREATE TABLE IF NOT EXISTS Course3
-               
-               (
-               questions1 TEXT PRIMARY KEY
-               , 
-               questions2 TEXT
-               ,
-               questions3 TEXT
-               ,
-               questions4 TEXT
-               ,
-               questions5 TEXT
-               ,
-               questions6 TEXT
-               , 
-               questions7 TEXT
-               ,
-               questions8 TEXT
-               ,
-               questions9 TEXT
-               ,
-               questions10 TEXT
-                              )
-               ''')
-cursor.execute('''
-               CREATE TABLE IF NOT EXISTS Course4
-               
-               (
-               questions1 TEXT PRIMARY KEY
-               , 
-               questions2 TEXT
-               ,
-               questions3 TEXT
-               ,
-               questions4 TEXT
-               ,
-               questions5 TEXT
-               ,
-               questions6 TEXT
-               , 
-               questions7 TEXT
-               ,
-               questions8 TEXT
-               ,
-               questions9 TEXT
-               ,
-               questions10 TEXT
-                              )
-               ''')
-cursor.execute('''
-               CREATE TABLE IF NOT EXISTS Course5
-               
-               (
-               questions1 TEXT PRIMARY KEY
-               , 
-               questions2 TEXT
-               ,
-               questions3 TEXT
-               ,
-               questions4 TEXT
-               ,
-               questions5 TEXT
-               ,
-               questions6 TEXT
-               , 
-               questions7 TEXT
-               ,
-               questions8 TEXT
-               ,
-               questions9 TEXT
-               ,
-               questions10 TEXT
-                              )
-               ''')
+               answer TEXT
+               )
+                ''')
 
+
+
+
+cur.executemany('''
+               INSERT INTO <tablename> (course, question, answer)
+               VALUES (?, ?, ?)
+               ''', quizbowl_questions)
+cur.execute('''DELETE FROM <tablename>''')
+
+con.commit()
